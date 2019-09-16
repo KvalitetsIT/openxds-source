@@ -222,36 +222,12 @@
             <url>http://repo1.maven.org/maven2</url>
         </repository>
         <repository>
-            <id>appfuse</id>
-            <url>http://static.appfuse.org/repository</url>
-        </repository>
-		<repository>
-			<id>sun1</id>
-			<url>http://download.java.net/maven/1</url>
-		</repository>
-		<repository>
-			<id>sun2</id>
-			<url>http://download.java.net/maven/2</url>
-		</repository>
-		<repository>
-			<id>ibilio</id>
-			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-		</repository>		
-        <repository>
-            <id>openxds</id>
-            <url>https://openxds.projects.openhealthtools.org/svn/openxds/repo</url>
-        </repository>
-        <repository>
             <id>sonatype-staging</id>
             <url>https://oss.sonatype.org/content/groups/staging</url>
         </repository>
     </repositories>
 
     <pluginRepositories>
-        <pluginRepository>
-            <id>appfuse</id>
-            <url>http://static.appfuse.org/repository</url>
-        </pluginRepository>
 		<pluginRepository>
 		    <id>mc-release</id>
 		    <name>Local Maven repository of releases</name>
