@@ -93,7 +93,7 @@
     	<name>Open Health Tools</name>
     	<url>http://www.openhealthtools.org/</url>
     </organization>
-    
+
     <build>
         <defaultGoal>install</defaultGoal>
         <resources>
@@ -158,13 +158,14 @@
 				<configuration>
 					<header>${basedir}/src/main/resources/header.txt</header>
 					<failIfMissing>true</failIfMissing>
-					<aggregate>true</aggregate>							
-	                <mapping> 
-	                    <jwc>XML_STYLE</jwc> 
-	                    <application>XML_STYLE</application> 
-	                    <myFileExtension>JAVADOC_STYLE</myFileExtension> 
-	                </mapping> 
 	                <useDefaultMapping>true</useDefaultMapping> 
+					<aggregate>true</aggregate>
+	                <mapping>
+	                    <jwc>XML_STYLE</jwc>
+	                    <application>XML_STYLE</application>
+	                    <myFileExtension>JAVADOC_STYLE</myFileExtension>
+	                </mapping>
+	                <useDefaultMapping>true</useDefaultMapping>
 					<properties>
 						<year>2009-2010</year>
 						<company>Misys Open Source Solutions (MOSS) and others</company>
@@ -204,7 +205,7 @@
 	                        <goal>format</goal>
 	                    </goals>
 	                </execution>
-	            </executions>                    
+	            </executions>
             </plugin>
         </plugins>
         <extensions>
@@ -236,7 +237,7 @@
 		<repository>
 			<id>ibilio</id>
 			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-		</repository>		
+		</repository>
         <repository>
             <id>openxds</id>
             <url>https://openxds.projects.openhealthtools.org/svn/openxds/repo</url>
@@ -320,7 +321,7 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
             <optional>true</optional>
-        </dependency> 
+        </dependency>
           <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
@@ -335,7 +336,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
-        </dependency>       
+        </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core-tiger</artifactId>
@@ -357,7 +358,7 @@
             <version>${wiser.version}</version>
             <scope>test</scope>
         </dependency>
-        
+
 <dependency>
     <groupId>net.sourceforge.jtds</groupId>
     <artifactId>jtds</artifactId>
@@ -370,9 +371,16 @@
 			<version>5.1.6</version>
 		</dependency>
 
+    <!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
+    <!-- Version 1.0.1B er ikke længere tilgængelig -->
+    <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>jta</artifactId>
+        <version>1.1</version>
+    </dependency>
 
     </dependencies>
-    
+
     <modules>
         <module>apache-axis2</module>
         <module>common-utils</module>
@@ -561,7 +569,7 @@
         <web.framework>struts</web.framework>
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>true</amp.fullSource>
-        
+
         <!-- Framework dependency versions -->
         <appfuse.version>2.0.2</appfuse.version>
         <spring.version>2.5.6</spring.version>
@@ -583,7 +591,7 @@
         <cargo.host>localhost</cargo.host>
         <cargo.port>8081</cargo.port>
         <cargo.wait>false</cargo.wait>
-                
+
         <!-- Database settings -->
         <dbunit.dataTypeFactoryName>org.dbunit.dataset.datatype.DefaultDataTypeFactory</dbunit.dataTypeFactoryName>
         <dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
@@ -595,7 +603,7 @@
         <jdbc.url><![CDATA[jdbc:postgresql://localhost/openxds]]></jdbc.url>
         <jdbc.username>openxds</jdbc.username>
         <jdbc.password>openxds</jdbc.password>
-    
+
         <!-- Properties calculated by AppFuse when running full-source plugin -->
         <aspectj.version>1.6.1</aspectj.version>
         <clickstream.version>1.0.2</clickstream.version>
@@ -611,7 +619,7 @@
         <ehcache.version>1.4.1</ehcache.version>
         <hibernate.annotations.version>3.3.0.ga</hibernate.annotations.version>
         <hibernate.validator.version>3.0.0.ga</hibernate.validator.version>
-        <hibernate.search.version>3.0.0.GA</hibernate.search.version>        
+        <hibernate.search.version>3.0.0.GA</hibernate.search.version>
         <hibernate.version>3.2.6.ga</hibernate.version>
         <javamail.version>1.4</javamail.version>
         <jpa.version>1.0</jpa.version>
@@ -625,14 +633,14 @@
         <urlrewrite.version>3.0.4</urlrewrite.version>
         <velocity.version>1.4</velocity.version>
         <xfire.version>1.2.6</xfire.version>
-        
+
         <!-- Properties defined by OpenXDS -->
         <openexchange.version>1.0-SNAPSHOT</openexchange.version>
         <openpixpdq.version>1.0</openpixpdq.version>
         <braid.version>1.2.2</braid.version>
         <hapi.version>0.5.1</hapi.version>
         <omar.version>3.1</omar.version>
-  		<oasis.version>1.0</oasis.version> 
+  		<oasis.version>1.0</oasis.version>
   		<axis2.version>1.5</axis2.version>
   		<build.lib.dir>../lib</build.lib.dir>
     </properties>
