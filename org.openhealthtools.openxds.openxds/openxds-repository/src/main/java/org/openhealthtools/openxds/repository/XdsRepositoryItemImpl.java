@@ -95,13 +95,20 @@ public class XdsRepositoryItemImpl implements XdsRepositoryItem {
      * @return Value of property sha1.
      */
     private byte[] getSha1() throws Exception {
-		InputStream is = this.getDataHandler().getInputStream();
-		byte[] inb = new byte[this.getSize()];
-		is.read(inb);
-		
-        MessageDigest md = MessageDigest.getInstance("SHA1"); 
-        byte[] result = md.digest(inb);
-        return result;
+		InputStream is = null;
+		try {
+			is = this.getDataHandler().getInputStream();
+			byte[] inb = new byte[this.getSize()];
+			is.read(inb);		
+	        MessageDigest md = MessageDigest.getInstance("SHA1"); 
+	        return md.digest(inb);
+		} catch (Exception e) {
+			throw e;			
+		} finally {
+			if (is != null) {
+		        is.close();
+			}
+		}
     }
     
     /**
@@ -131,14 +138,21 @@ public class XdsRepositoryItemImpl implements XdsRepositoryItem {
 	 */
 	public int getSize() throws RepositoryException {
         int size = 0;
+        InputStream is = null;
 		try {
-			InputStream is = handler.getInputStream();
+			is = handler.getInputStream();
 	        while (is.read() != -1) {
 	            size++;
 	        }
 		} catch (Exception e) {
 			throw new RepositoryException(e);
-		}		
+		} finally {
+			try {
+				if (is != null) {
+					is.close();
+				}
+			} catch (Exception e) {}
+		}
 		return size;
 	}
 

@@ -170,6 +170,7 @@ public class CodeValidation {
 	}
 
 	void validate(Classification cl) {
+return ;/*
 		String classification_scheme = cl.getClassificationScheme();
 
 		if (classification_scheme == null) {
@@ -205,6 +206,7 @@ public class CodeValidation {
 		}
 		val("Coding of " + coding_scheme, " (" + code + ") Not Found");
 		err("The code, " + code + ", is not found in the configuration for the Affinity Domain", cl);
+*/	
 	}
 
 	void val(String topic, String msg ) {

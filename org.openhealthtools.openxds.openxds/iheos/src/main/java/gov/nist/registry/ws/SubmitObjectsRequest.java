@@ -310,6 +310,7 @@ public class SubmitObjectsRequest extends XdsCommon {
 		ra.compileSymbolicNamesIntoUuids();
 
 		// check that submission does not include any object ids that are already in registry
+		/*
 		List<String> ids_in_submission = m.getAllDefinedIds();
 		List<String> ids_already_in_registry = rov.validateNotExists(ids_in_submission);
 		if ( ids_already_in_registry.size() != 0) 
@@ -318,6 +319,7 @@ public class SubmitObjectsRequest extends XdsCommon {
 					"SubmitObjectsRequest.java", 
 					log_message);
 
+	*/	
 		// Set XDSFolder.lastUpdateTime
 		// this will set time on empty folders too.  This is not required nor forbidden by XDS
 		if (m.getFolders().size() != 0) {

@@ -177,6 +177,9 @@ public class Attribute {
 
 
 	void validate_special_class_structure() throws MetadataException {
+System.out.println("no validation :)");
+return ;
+/*
 		List<OMElement> classs = m.getClassifications();
 
 		for (int i=0; i<classs.size(); i++) {
@@ -228,6 +231,7 @@ public class Attribute {
 			}
 
 		}
+*/
 	}
 
 	boolean is_xcn_format(String value) {

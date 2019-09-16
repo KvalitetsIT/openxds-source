@@ -357,6 +357,20 @@
             <version>${wiser.version}</version>
             <scope>test</scope>
         </dependency>
+        
+<dependency>
+    <groupId>net.sourceforge.jtds</groupId>
+    <artifactId>jtds</artifactId>
+    <version>1.2.8</version>
+</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+
+
     </dependencies>
     
     <modules>
@@ -613,7 +627,7 @@
         <xfire.version>1.2.6</xfire.version>
         
         <!-- Properties defined by OpenXDS -->
-        <openexchange.version>1.0</openexchange.version>
+        <openexchange.version>1.0-SNAPSHOT</openexchange.version>
         <openpixpdq.version>1.0</openpixpdq.version>
         <braid.version>1.2.2</braid.version>
         <hapi.version>0.5.1</hapi.version>

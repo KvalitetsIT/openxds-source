@@ -96,6 +96,7 @@ public class RelationalDBRepositoryServiceImpl implements XdsRepositoryService {
 			log.error(e);
 			throw new RepositoryException(e);
 		}
+	       
 		return repositoryItem;
 	
 	}
@@ -152,12 +153,22 @@ public class RelationalDBRepositoryServiceImpl implements XdsRepositoryService {
 			log.debug("document unique id already exist");
 			throw new RepositoryException("document unique id already exist in repository");
 		}
+		InputStream is = null;
 		try {
-			contentBytes = readBytes(item.getDataHandler().getInputStream());
+			is = item.getDataHandler().getInputStream();
+			contentBytes = readBytes(is);			
 		} catch (Exception e) {
 			log.error(e);
 		    throw new RepositoryException("error while converting datahandler object into byte array");
-		}		     
+		} finally {
+			try {
+				if (is != null) {
+					is.close();
+				}
+			} catch (Exception e) {
+				throw new RepositoryException("error closing inputstream");
+			}
+		}
         bean = new Repository();
         bean.setDocumentUniqueId(id);
         bean.setBinaryContent(contentBytes);
